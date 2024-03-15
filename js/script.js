@@ -18,17 +18,21 @@ dentro il div inserisco N volte una fz che mi genera un quadrato. ogni quadrato 
 */
 
 
-// let elBtnPlay = document.getElementById('playbtn')
+let elBtnPlay = document.getElementById('playbtn')
+let elBoxContainer = document.getElementById('box-container')
+elBtnPlay.addEventListener('click', function(){
+    for (let index = 0; index < 100; index++) {
+        let boxes = generateSquares();
+        boxes = generateSquares(index + 1);
+        elBoxContainer.appendChild(boxes);
+    }
+})
 
-// console.log(elBtnPlay)
-// elBtnPlay.addEventListener('click', function(){
 
-// })
 
 function generateSquares(content) {
-    let newElement = document.createElement(`div`);
-    newElement.classList.add('square') 
-    newElement.innerHTML = `<span> + ${content} + <span>`
-    return newElement
+    let newElement = document.createElement("div");
+    newElement.classList.add('square');
+    newElement.innerHTML = `<span>${content}<span>`;
+    return newElement;
 }
-
