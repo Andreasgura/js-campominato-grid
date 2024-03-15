@@ -27,16 +27,15 @@ elBtnPlay.addEventListener('click', function(){
         boxes = generateSquares(index + 1); 
         elBoxContainer.appendChild(boxes);
         boxes.addEventListener ('click', function () {
-            boxes.classList.add('clicked')
+            this.classList.add('clicked')
             console.log(index + 1)
-            
+            elBoxContainer.appendChild(boxes);   
         });
         
     }
     
 
 });
-
 
 
 
